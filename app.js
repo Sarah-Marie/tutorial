@@ -407,3 +407,60 @@ for(let i = 0;i < names.length;i++) {
 console.log(names);
 console.log(newArray);
 */
+
+//Functions, return, if, arrays, for loop
+/*
+const gas = [20, 40, 100, 30];
+const food = [10, 40, 50];
+const fastfood = [24, 19, 16, 30, 15];
+
+function calculateTotal(arr) {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  if (total > 100) {
+    console.log(`Whoa!  You are spending way too much`);
+    return total;
+  }
+  console.log(`You are good.  Total is less than 100`);
+
+  return total;
+}
+
+const gasTotal = calculateTotal(gas);
+const foodTotal = calculateTotal(food);
+const randomTotal = calculateTotal([200, 4000, 500, 1]);
+const fastfoodTotal = calculateTotal(fastfood);
+
+console.log({
+  gas: gasTotal,
+  food: foodTotal,
+  random: randomTotal,
+  fastfood: fastfoodTotal,
+}); */
+
+//Reference vs. Value
+//Primitive Data Types
+// String, number, symbol, boolean, undefined, null,
+//arrays, functions, objects = object
+//type of
+
+//When assigning primitive data type value to a variable any changes are made directly to that value
+//without afffecting original value
+
+//when assigning non-primitive data type value to a variabel is
+//done by reference so any changes will affect all the references
+
+const number = 1;
+const number2 = number;
+
+console.log(`the first value is ${number}`);
+console.log(`the second value is ${number2}`);
+
+let person = { name: "bob" };
+let person2 = { ...person };
+person2.name = "susy";
+
+console.log(`the name of the first person is ${person.name}`);
+console.log(`the name of the second person is ${person2.name}`);
