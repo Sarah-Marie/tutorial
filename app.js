@@ -451,7 +451,7 @@ console.log({
 
 //when assigning non-primitive data type value to a variabel is
 //done by reference so any changes will affect all the references
-
+/*
 const number = 1;
 const number2 = number;
 
@@ -463,4 +463,62 @@ let person2 = { ...person };
 person2.name = "susy";
 
 console.log(`the name of the first person is ${person.name}`);
-console.log(`the name of the second person is ${person2.name}`);
+console.log(`the name of the second person is ${person2.name}`);*/
+//Null and undefined
+//both represent "no value"
+
+//undefined- "javascript can not find value for this"
+
+//variable without value
+//missing function arguments
+//missing object properties
+
+/*let number = 20 + null //20 + 0
+
+console.log(number);
+
+let number3 = 20 + undefined;
+console.log(number3);*/
+
+//truthy and falsy
+// "", '', ``, 0, -0, NaN, false, null, undefined
+/*
+const bool1 = true;
+const bool2 = 2 > 1;
+
+const text = 'john';
+
+if(text) {
+  console.log(`hey the value is truthy`)
+}
+else {
+  console.log(`hey the value is falsy`);
+}
+
+//nul- "developer sets the value"
+*/
+
+//Unary operator - typeof
+
+let text = "some text";
+console.log(typeof text); //operand
+
+//binary operator - assignment
+
+let number = 3;
+let number2 = 2 + 5;
+
+//ternary operator
+//condition ? (runs if true) : (runs if false)
+const value = 2 > 1;
+
+value ? console.log("value is true") : console.log("value is false");
+
+/*
+if(value) {
+ console.log('value is true');
+
+}
+else {
+  console.log('value is false';)
+}*/
