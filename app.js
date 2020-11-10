@@ -499,6 +499,7 @@ else {
 */
 
 //Unary operator - typeof
+/*
 
 let text = "some text";
 console.log(typeof text); //operand
@@ -512,7 +513,7 @@ let number2 = 2 + 5;
 //condition ? (runs if true) : (runs if false)
 const value = 2 > 1;
 
-value ? console.log("value is true") : console.log("value is false");
+value ? console.log("value is true") : console.log("value is false");*/
 
 /*
 if(value) {
@@ -522,3 +523,173 @@ if(value) {
 else {
   console.log('value is false';)
 }*/
+
+//Global Scope vs Local Scope
+//any variable outside code block { } is said to be in Global Scope
+//can be accessed anywhere in the program
+//Gotchas: name collisons, modify by mistake
+
+/*let names = "bobo";
+name = "peter";
+
+function calculate() {
+  //some other code...
+  console.log(name);
+  name = "orange";
+  function inner() {
+    name = "inner name value";
+    console.log(`this is from inner function ${name}`);
+  }
+  inner();
+}
+calculate();
+
+if (true) {
+  console.log(name);
+  name = "pants";
+}
+console.log(`my name is ${name} and I'm awesome`);*/
+
+// Local Scope
+// can not be accessed from outside code blocks
+// if - NOT VAR
+/*
+let name = "bobo";
+
+function calculate() {
+  const name = "john";
+  const age = 25;
+  //code goes here
+  becomesGlobal = "global variable";
+}
+
+calculate();
+console.log(becomesGlobal);
+
+if (true) {
+  const name = "john";
+}
+
+{
+  const name = "john";
+  const special = "special";
+}
+console.log(special);
+console.log(`my name is ${name} and I'm awesome`);*/
+
+//Variable Loop
+// {} - code block
+/*
+const globalNumber = 5;
+
+function add(num1, num2) {
+  const globalNumber = 20;
+  const result = num1 + num2 + globalNumber;
+  function multiply() {
+    const globalNumber = 100;
+    const multiplyResult = result * globalNumber;
+    console.log(multiplyResult);
+  }
+  multiply();
+  return result;
+}
+
+console.log(add(3, 4));
+*/
+
+/*function greetMorning(name) {
+  const myName = "john";
+  console.log(`Good Morning ${name}, my name is ${myName}`);
+}
+
+function greetAfternoon(name) {
+  const myName = "john";
+  console.log(`Good Afternoon ${name}, my name is ${myName}`);
+}*/
+/*
+// callback function
+function morning(name) {
+  return `Good morning ${name.toUpperCase()}`;
+}
+
+function afternoon(name) {
+  return `Good afternoon ${name.repeat(3)}`;
+}
+
+// higher order function -we want to make this flexible
+function greet(name, cb) {
+  const myName = "john";
+  console.log(`${cb(name)}, Je m'apelle ${myName}`);
+}
+greet("bobo", morning);
+greet("peter", afternoon);*/
+
+//  Callback functions, Higher Order Functions, Functions as First Class Objects/Citizens
+
+//Functions are first class objects- stored in a variable (expression), passed
+//as an argument to another function, return from the function (closure)
+
+//Higher Order Function- Accepts another function as an argument or returns another function as a result
+
+//Callback Function - passed to another function as an argument and executed inside that function
+
+// ARRAY ITERATORS
+// Powerful Array Methods
+//forEach, map, filter, find, reduce
+//Iterate over array -no for loop required
+//Accept CALLBACK function as an argument, calls CALLBACK against each item in an array.
+//Reference Item in the Callback Paramater.
+
+//const numbers = [0, 1, 2, 3, 4];
+
+//show all numbers
+
+//forEach
+
+// does not return new array
+/*
+const people = [
+  { name: "bob", age: 20, position: "developer" },
+  { name: "peter", age: 25, position: "designer" },
+  { name: "susie", age: 30, position: "the boss" },
+];
+
+function showPerson(person) {
+  console.log(person.position.toUpperCase());
+}
+
+//people.forEach(showPerson);
+
+people.forEach(function (item) {
+  console.log(item.name.toUpperCase());
+}); */
+
+//MAP
+
+//Returns a new array
+//does not change size of the original array
+//uses values from original array when making new one
+
+const people = [
+  { name: "bob", age: 20, position: "developer", experience: "junior" },
+  { name: "peter", age: 25, position: "designer", experience: "junior" },
+  { name: "susie", age: 30, position: "the boss", experience: "senior" },
+];
+
+const ages = people.map(function (person) {
+  return person.age + 20;
+});
+
+const newPeople = people.map(function (person) {
+  return {
+    firstName: person.name.toUpperCase(),
+    oldAge: person.age + 20,
+  };
+});
+
+const names = people.map(function (person) {
+  return `<h1>${person.name}</h1>`;
+});
+
+document.body.innerHTML = names.join("");
+console.log(names);
