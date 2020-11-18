@@ -669,7 +669,7 @@ people.forEach(function (item) {
 //Returns a new array
 //does not change size of the original array
 //uses values from original array when making new one
-
+/*
 const people = [
   { name: "bob", age: 20, position: "developer", experience: "junior" },
   { name: "peter", age: 25, position: "designer", experience: "junior" },
@@ -692,4 +692,83 @@ const names = people.map(function (person) {
 });
 
 document.body.innerHTML = names.join("");
-console.log(names);
+console.log(names); */
+
+//filter
+
+//Does return a new array
+//can manipulate the size of new array
+//returns based on condition
+/*
+const people = [
+  { name: "bob", age: 20, position: "developer" },
+  { name: "Jim Bob", age: 68, position: "retired consultant" },
+  { name: "Katie", age: 32, position: "human resources" },
+  { name: "Anna", age: 36, position: "CEO" },
+];
+
+const youngPeople = people.filter(function (person) {
+  return person.age <= 35;
+});
+
+const developers = people.filter(function (person) {
+  return person.position === "developer";
+});
+
+//console.log(developers);
+
+console.log(youngPeople); */
+
+//Find
+//returns single instance -(in this case, object)
+//returns first match, if no match will return "undefined"
+//great for getting unique value
+/*
+const people = [
+  { name: "bob", age: 20, position: "developer", id: 1 },
+  { name: "Jim Bob", age: 68, position: "retired consultant", id: 2 },
+  { name: "Katie", age: 32, position: "human resources", id: 3 },
+  { name: "Anna", age: 36, position: "CEO", id: 4 },
+];
+
+const names = ["bob", "Jim Bob", "katie", "Anna"];
+const person = people.find(function (person) {
+  return person.id === 3;
+});
+
+console.log(
+  names.find(function (name) {
+    return name === "bob";
+  })
+);
+
+console.log(person);
+*/
+
+//Reduce
+// iterates, callback function
+//reduces to a single value- number, array, object
+// 1 parameter ('acc')- total of all calculations
+// 2 parameter ('curr')- current iteration/value
+
+const people = [
+  { name: "bob", age: 20, position: "developer", id: 1, salary: 200 },
+  {
+    name: "Jim Bob",
+    age: 68,
+    position: "retired consultant",
+    id: 2,
+    salary: 400,
+  },
+  { name: "Katie", age: 32, position: "human resources", id: 3, salary: 250 },
+  { name: "Anna", age: 36, position: "CEO", id: 4, salary: 210050 },
+];
+
+const total = people.reduce(function (acc, currItem) {
+  console.log(`total: ${acc}`);
+  console.log(`current money : ${currItem.salary}`);
+  acc += currItem.salary;
+  return acc;
+}, 500);
+
+console.log(total);
