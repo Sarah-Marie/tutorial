@@ -750,7 +750,7 @@ console.log(person);
 //reduces to a single value- number, array, object
 // 1 parameter ('acc')- total of all calculations
 // 2 parameter ('curr')- current iteration/value
-
+/*
 const people = [
   { name: "bob", age: 20, position: "developer", id: 1, salary: 200 },
   {
@@ -771,4 +771,20 @@ const total = people.reduce(function (acc, currItem) {
   return acc;
 }, 500);
 
-console.log(total);
+console.log(total); */
+
+//Math
+//Standard built-in objects -always available
+//floor rounds down
+//ceiling rounds up
+
+//const number = 4.56789;
+//const result = Math.ceil(number);
+
+//const number = 25;
+//const result = Math.sqrt(number);
+
+//const result = Math.PI;
+
+const result = Math.max(4, 5, 6, 7, 8, 9, 100, 200, 1000);
+console.log(result);
