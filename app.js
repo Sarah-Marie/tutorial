@@ -62,7 +62,7 @@ const css = btn.style;
 // getElementByTagName('tagname');
 // node-list = array-like object
 //index, length property but not array methods
-
+/*
 const headings = document.getElementsByTagName("h2");
 //console.log(headings);
 headings[0].style.color = "red";
@@ -82,4 +82,18 @@ betterItems.forEach(function (item) {
 });
 
 console.log(items);
-console.log(betterItems);
+console.log(betterItems); */
+
+//Select the element or group of elements that we want
+//Decide the effect we want to apply to the selection
+
+//getElementByClassName('classname');
+
+// node-list = array-like objects
+// index, length property but not array methods
+
+const listItems = document.getElementsByClassName("special");
+
+console.log(listItems);
+
+listItems[1].style.color = "blue";
