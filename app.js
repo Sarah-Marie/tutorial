@@ -48,13 +48,38 @@ const css = btn.style;
 //Decide the effect we want to apply to the selection
 //getElementById('element')
 
-const hi = document.getElementById("title");
-h1.style.color = "red";
+//const hi = document.getElementById("title");
+//h1.style.color = "red";
 
-const btn = document.getElementById("btn");
+//const btn = document.getElementById("btn");
 
-btn.style.backgroundColor = "blue";
-btn.style.color = "white";
+//btn.style.backgroundColor = "blue";
+//btn.style.color = "white";
 
 //document.getElementById('btn').style.backgroundColor = 'blue';
 //document.getElementById('btn').style.color = 'white';
+
+// getElementByTagName('tagname');
+// node-list = array-like object
+//index, length property but not array methods
+
+const headings = document.getElementsByTagName("h2");
+//console.log(headings);
+headings[0].style.color = "red";
+//console.log(headings.length);
+
+const items = document.getElementsByTagName("li");
+
+//items.forEach(function () {
+// console.log(item);
+//});
+items[2].style.color = "orange";
+items[3].style.color = "blue";
+const betterItems = [...items];
+
+betterItems.forEach(function (item) {
+  // console.log(item);
+});
+
+console.log(items);
+console.log(betterItems);
