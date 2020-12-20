@@ -170,9 +170,116 @@ const last = document.querySelector('#last'); */
 
 //nodeValue
 //textContent
-
+/*
 const item = document.getElementById('special');
 const value = item.firstChild.nodeValue;
 const easyValue = item.textContent;
 
-console.log(easyValue);
+console.log(easyValue); */
+
+// getAttribute();
+// setAttribute();
+/*
+const first = document.querySelector('.first');
+const idValue = first.getAttribute('id');
+//console.log(idValue);
+
+const link = document.getElementById('link');
+const showLink = link.getAttribute('href');
+console.log(showLink);
+
+
+const last = link.nextElementSibling;
+last.setAttribute('class', 'first');
+last.textContent = 'I also have a class of firsts';
+console.log(last);
+
+const links = document.querySelectorAll('.first');
+console.log(links); */
+
+// className
+//classList
+
+//const first = document.getElementById('first');
+const second = document.getElementById('second');
+const third = document.getElementById('third');
+
+//const classValue = first.className;
+//console.log(classValue);
+
+//second.className = 'colors text';
+//third.classList.add('text');
+ //const classValue = third.classList;
+ //console.log(classValue);
+
+ /*
+ third.classList.add('text', 'colors');
+ third.classList.remove('text');
+
+ let result = third.classList.contains('colors');
+ if(result) {
+   console.log('Hello World');
+   
+ }else{
+   console.log('does not have the class');
+ }
+
+ const classValue = third.classList;
+ console.log(classValue);
+*/
+
+// createElement('element');
+// createTextNode('text content');
+// element.appendChild(childElement)
+
+// insertBefore('element', 'location');
+
+//const result = document.querySelector('#result');
+//const first = document.querySelector('.red');
+// create empty element
+
+/*
+const bodyDiv = document.createElement('div');
+// create text node
+const text = document.createTextNode('a simple body div');
+bodyDiv.appendChild(text);
+document.body.insertBefore(bodyDiv, result);
+//document.body.appendChild(bodyDiv);
+
+//result element
+const heading = document.createElement('h2');
+const headingText = document.createTextNode('dynamic heading');
+heading.appendChild(headingText);
+heading.classList.add('blue');
+
+//result.insertBefore(heading, first);
+
+const smallHeading = document.createElement('h6');
+const smallText = document.createTextNode('I am a small heading text');
+smallHeading.classList.add('red');
+smallHeading.appendChild(smallText);
+document.body.replaceChild(smallHeading, bodyDiv);
+
+
+//result.appendChild(heading);
+
+console.log(result.children); */
+
+// prepend
+// innerText
+
+/*
+const heading = document.createElement('h2');
+heading.innerText = `I am a dynamic heading`;
+
+document.body.prepend(heading); */
+
+// remove
+// removeChild
+
+const result = document.querySelector('#result');
+//result.remove();
+const heading = result.querySelector('h1');
+result.removeChild(heading);
+console.log(heading);
+
