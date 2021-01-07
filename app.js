@@ -276,10 +276,136 @@ document.body.prepend(heading); */
 
 // remove
 // removeChild
-
+/*
 const result = document.querySelector('#result');
 //result.remove();
-const heading = result.querySelector('h1');
+const heading = result.querySelector('h6');
 result.removeChild(heading);
 console.log(heading);
+*/
+
+//innerHTML
+//textContent 
+/*
+
+const list = document.getElementById('first');
+const div = document.getElementById('second');
+const item = document.querySelector('.item');
+
+console.log(div.textContent);
+console.log(list.innerHTML);
+console.log(list.textContent);
+
+const randomVar = 'random value';
+
+const ul = document.createElement('ul');
+ul.innerHTML = `<li class="item">${randomVar}</li>
+      <li>List Item</li>`;
+
+document.body.appendChild(ul);     
+
+div.textContent = 'hello world';
+div.innerHTML = `<li class="item">${randomVar}</li>
+      <li>List Item</li>`; */
+
+
+// CSS      
+/*
+const random = document.querySelector('.random');
+//random.style.backgroundColor = 'blue';
+//random.style.color = "white";
+//random.style.fontSize = '3rem';
+//random.style.textTransform = "capitalize";
+
+
+random.classList.add('title');
+
+random.classList.add('paragraph'); */
+
+// select element
+//addEventListener()
+//what event, what to do(the callback function)
+
+/*
+
+const btn = document.querySelector('.btn');
+const heading = document.querySelector('h2');
+
+function changeColors(){
+  let hasClass = heading.classList.contains('red');
+  if(hasClass){
+    heading.classList.remove('red');
+  }
+  else{
+    heading.classList.add('red');
+  }
+
+}
+
+btn.addEventListener('click', changeColors); 
+*/
+
+// click- fires after full action occurs
+//mousedown- button is pressed
+//mouseup- button is released
+// mouseenter- moved onto an element
+//mouseleave- moved out of an element
+/*
+const heading = document.querySelector('h1');
+const btn = document.querySelector('.btn');
+
+btn.addEventListener('click', function(){
+  console.log('you clicked me');
+})
+btn.addEventListener('mousedown', function(){
+  console.log('down');
+})
+btn.addEventListener('mouseup', function(){
+  console.log('up');
+});
+
+heading.addEventListener('mouseenter', function(){
+  heading.classList.add('blue');
+});
+heading.addEventListener('mouseleave', function(){
+  heading.classList.remove('blue');
+}) */
+
+//keypress- when key is pressed
+//keydown- when key is down
+//keyup- when key is released
+/*
+const nameInput = document.getElementById('name');
+
+nameInput.addEventListener('keypress', function(){
+  console.log('you pressed a key');
+});
+*/
+
+//event object argument e,evt
+//info about triggered event
+//event.type
+//event.currentTarget
+//this keyword
+//preventDefault() - prevents default behavior
+
+const heading = document.querySelector('h1');
+const btn = document.querySelector('.btn');
+const link = document.getElementById('link');
+
+
+heading.addEventListener('click', function(event){
+console.log(event.currentTarget);
+});
+
+btn.addEventListener('click', function(event){
+  event.currentTarget.classList.add('blue');
+  console.log(event.type);
+});
+
+function someFunc(e){
+e.preventDefault();
+}
+link.addEventListener('click', someFunc);
+
 
