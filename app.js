@@ -453,7 +453,7 @@ document.addEventListener('click', showBubbling, {capture: true});
 window.addEventListener('click', showBubbling, {capture: true});
 list.addEventListener('click', showBubbling, {capture: true});
 */
-
+/*
 const container = document.querySelector('.container');
 const btn = document.querySelector('.btn');
 //const heading = document.querySelector('.heading');
@@ -476,5 +476,23 @@ container.addEventListener('click', function(e){
   }
 });
 //heading.addEventListener('click', sayHello);
+*/
+// FORMS
+//submit event listener
+//prevent default
+//how to get a value
+
+const form = document.getElementById('form');
+const name = document.getElementById('name');
+const password = document.getElementById('password');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  console.log('form submitted');
+  console.log(name.value);
+  console.log(password.value);
+});
+
+
 
 
