@@ -412,7 +412,7 @@ link.addEventListener('click', someFunc);
 
 //currentTarget- always refers to the element to which the event handler has been attached to
 //target-identifies the element on which the event occured.
-
+/*
 const btns = document.querySelectorAll('.btn');
 
 btns.forEach(function(btn){
@@ -424,5 +424,24 @@ btns.forEach(function(btn){
     e.target.style.color = 'green';
   });
 });
+*/
+
+//Allows select dynamic elements
+// event propogation- order the events are fired
+// event bubbling- clicked element first then bubbles up- default
+// event capturing- fires at the root and fires until it reaches target
+
+const container = document.querySelector('.container');
+const list = document.querySelector('.list-items');
+
+function showBubbling(e){
+  console.log('current target', e.currentTarget);
+  console.log('target', e.target);
+}
+list.addEventListener('click', showBubbling)
+container.addEventListener('click', showBubbling);
+document.addEventListener('click', showBubbling);
+window.addEventListener('click', showBubbling);
+
 
 
