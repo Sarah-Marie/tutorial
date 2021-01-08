@@ -436,12 +436,22 @@ const list = document.querySelector('.list-items');
 
 function showBubbling(e){
   console.log('current target', e.currentTarget);
-  console.log('target', e.target);
+  //console.log('target', e.target);
+  //if(e.target.classList.contains('link')){
+  //  console.log('you clicked on the link');
+ // }
 }
-list.addEventListener('click', showBubbling)
-container.addEventListener('click', showBubbling);
-document.addEventListener('click', showBubbling);
-window.addEventListener('click', showBubbling);
+function stopPropogation(e){
+  console.log('you clicked on a list');
+  e.stopPropogation();
+}
+
+
+
+container.addEventListener('click', showBubbling, {capture: true});
+document.addEventListener('click', showBubbling, {capture: true});
+window.addEventListener('click', showBubbling, {capture: true});
+list.addEventListener('click', showBubbling, {capture: true});
 
 
 
