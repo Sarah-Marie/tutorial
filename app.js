@@ -535,7 +535,7 @@ else {
 console.log(fruits);
 //fruits.push('apple');
 //fruits.push('orange');
-fruits.push('banana');
+fruits.push('pear');
 localStorage.setItem('fruits', JSON.stringify(fruits));
 
 
